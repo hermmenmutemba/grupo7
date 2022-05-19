@@ -1,14 +1,14 @@
 a,
-input[type="submit"],
+input[type="Submeter"],
 button {
   @apply outline-none cursor-pointer;
 }
 a:hover,
 a:active,
 a:focus,
-input[type="submit"]:hover,
-input[type="submit"]:active,
-input[type="submit"]:focus,
+input[type="Submeter"]:hover,
+input[type="Submeter"]:active,
+input[type="Submeter"]:focus,
 button:hover,
 button:active,
 button:focus {

@@ -8,7 +8,7 @@ const Search = () => {
         <input
           type="search"
           name="search"
-          placeholder="Search..."
+          placeholder="Pesquisar..."
           className="pl-10 pr-5 appearance-none h-10 w-full rounded-full text-sm focus:outline-none"
         />
         <button type="submit" className="absolute top-0 mt-3 left-0 ml-4">

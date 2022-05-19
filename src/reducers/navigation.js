@@ -21,7 +21,7 @@ import {
 
 const initialState = [
   {
-    title: "Sales - System",
+    title: "Sistema de Vendas",
     items: [
       {
         url: "/",
@@ -32,7 +32,7 @@ const initialState = [
       {
         url: "/",
         icon: <FiActivity size={20} />,
-        title: "Reports",
+        title: "Notificacoes",
         items: [
           {
             url: "/",
@@ -59,11 +59,11 @@ const initialState = [
       {
         url: "/",
         icon: <FiShoppingBag size={20} />,
-        title: "Sales",
+        title: "Vendas",
         items: [
           {
             url: "/orders",
-            title: "Order's",
+            title: "Pedidos",
             items: [],
           }
         ],
@@ -71,7 +71,7 @@ const initialState = [
       {
         url: "/",
         icon: <FiSettings size={20} />,
-        title: "Settings",
+        title: "Definicoes",
         badge: {
           color: "bg-indigo-500 text-white",
           text: 6,

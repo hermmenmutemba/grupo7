@@ -33,25 +33,25 @@ export default function Orders({
           accessor: "id"
         },
         {
-          Header: "Date",
+          Header: "Data",
           accessor: "date",
           Cell: (props) => <span>{Dates.formatDate(props.value, "yyyy-MM-DD")}</span>
         },
         {
-          Header: "Customer",
+          Header: "Cliente",
           accessor: "customer",
         },
         {
-          Header: "Name",
+          Header: "Nome",
           accessor: "name",
         },
         {
-          Header: "Code",
+          Header: "Codigo",
           accessor: "code"
         },
 
         {
-          Header: "Gross Total",
+          Header: "Grosso Total",
           accessor: "grossTotal",
           Cell: (props) => <span>{Math.formatNumber(props.value)}</span>
         },
@@ -94,7 +94,7 @@ export default function Orders({
 
   return (
     <>
-      <SectionTitle title="Sales Tables" subtitle="Order's" />
+      <SectionTitle title="Tabela de Vendas" subtitle="Pedidos" />
       <Widget
         title=""
         description=""
@@ -105,7 +105,7 @@ export default function Orders({
             onClick={handlerAddNew}>
 
             <FiPlus className="stroke-current text-white" size={18} />
-            <span>Add New</span>
+            <span>Novo</span>
           </button>
         }
       >

@@ -8,10 +8,10 @@ const Search = () => (
         <input
           type="search"
           name="search"
-          placeholder="Search..."
+          placeholder="Pesquisar..."
           className="w-full appearance-none h-10 pl-10 pr-5 rounded-full text-sm bg-gray-100 focus:outline-none"
         />
-        <button type="submit" className="absolute top-0 mt-3 left-0 ml-4">
+        <button type="submeter" className="absolute top-0 mt-3 left-0 ml-4">
           <FiSearch className="stroke-current h-4 w-4" />
         </button>
       </div>

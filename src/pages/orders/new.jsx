@@ -205,37 +205,28 @@ export default function Documents({
 
   let itemsForm = [
     {
-      label: 'Code',
+      label: 'Codigo',
       name: 'code',
       type: 'text',
       placeholder: 'Enter the code',
       onChange: handlerCode
     },
     {
-      label: 'Date',
+      label: 'Data',
       name: 'date',
       type: 'date',
       placeholder: 'Enter the code',
       onChange: handlerDate
     },
     {
-      label: 'Serie',
-      error: { required: 'Please enter your type - Now only 2021' },
-      name: 'serie',
-      value: '2021',
-      type: 'text',
-      placeholder: 'Enter the - Now only 2021',
-      onChange: handlerSerie
-    },
-    {
-      label: 'Customer',
+      label: 'Cliente',
       name: 'customer',
       type: 'select',
       options: customerOptions,
       onChange: handlerCustomer
     },
     {
-      label: 'Name',
+      label: 'Nome',
       error: { required: 'Please enter the name' },
       name: 'name',
       type: 'text',
@@ -307,7 +298,7 @@ export default function Documents({
 
   let itemsLines = [
     {
-      label: 'Code',
+      label: 'Codigo',
       name: 'code',
       error: { required: 'Please select the Product' },
       type: 'select',
@@ -315,17 +306,17 @@ export default function Documents({
       onChange: handlerLineCodeChange
     },
     {
-      label: 'Description',
+      label: 'Descricao',
       name: 'description',
       type: 'text',
-      placeholder: 'Enter the Description'
+      placeholder: 'Enter the Descricao'
     },
 
     {
       label: 'ItemUnity',
       name: 'unity',
       type: 'select',
-      options: [{ label: "Unity", value: "UN" }]
+      options: [{ label: "Unidade", value: "UN" }]
     },
     {
       label: 'Quantity',
@@ -336,7 +327,7 @@ export default function Documents({
       onChange: handlerLineQuantityChange
     },
     {
-      label: 'Price',
+      label: 'Preco',
       error: { required: 'Please enter the name' },
       name: 'price',
       type: 'number',
@@ -373,15 +364,15 @@ export default function Documents({
           accessor: "id"
         },
         {
-          Header: "Code",
+          Header: "Codigo",
           accessor: "code"
         },
         {
-          Header: 'Description',
+          Header: 'Descricao',
           accessor: 'description'
         },
         {
-          Header: "Unity",
+          Header: "Unidade",
           accessor: "unity"
         },
         {
@@ -389,7 +380,7 @@ export default function Documents({
           accessor: "quantity"
         },
         {
-          Header: "Price",
+          Header: "Preco",
           accessor: "price"
         },
         {
@@ -407,13 +398,13 @@ export default function Documents({
   const tabs = [
     {
       index: 0,
-      title: "General",
+      title: "Geral",
       active: true,
       content: <FormOrder items={itemsForm} onSubmit={onSubmit} />,
     },
     {
       index: 1,
-      title: "Lines",
+      title: "Linhas",
       active: false,
       content: <LineItems />,
     },
@@ -422,7 +413,7 @@ export default function Documents({
 
   return (
     <>
-      <SectionTitle title="Create a New" subtitle="Sales Document" />
+      <SectionTitle title="Criar uma nova" subtitle="Planilha de Precos" />
 
       <Widget
         title=""
@@ -436,7 +427,7 @@ export default function Documents({
               onClick={handleSave}>
 
               <FiSave className="stroke-current text-white" size={18} />
-              <span>Save</span>
+              <span>Guardar</span>
             </button>
 
             <Modal
@@ -449,7 +440,7 @@ export default function Documents({
               body={
                 <FormValidation items={itemsLines} onSubmit={onSubmitAddLines} />
               }
-              buttonTitle="Save"
+              buttonTitle="Guardar"
               buttonClassName="btn btn-default btn-rounded bg-green-500 hover:bg-red-600 text-white"
 
             />
@@ -457,14 +448,7 @@ export default function Documents({
           </div>
         }
       >
-        <fieldset>
-          <legend>Resume</legend>
 
-          <div class="grid grid-cols-2 gap-4">
-            <div><ResumeDiv /> </div>
-            <div><TotalDiv /></div>
-          </div>
-        </fieldset>
 
         <UnderlinedTabs tabs={tabs} />
       </Widget>
