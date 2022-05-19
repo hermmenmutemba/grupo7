@@ -233,8 +233,8 @@ export default function Documents({
       placeholder: 'Enter the name',
       onChange: handlerName
     },
-    
-   
+
+
   ]
 
   const onSubmitAddLines = async (data) => {
@@ -255,20 +255,22 @@ export default function Documents({
 
     const product = productOptions.find(item => item.value === code);
 
+    console.log(product)
+
     if (product.label === "") {
       setValue("description", "")
-      setValue("unity", product.unity || "UN")
+      setValue("unity", product.Unidade || "UN")
       setValue("quantity", 1)
       setValue("price", 0)
       setValue("vatTotal", 0)
       setValue("total", 0)
     } else {
-      setValue("description", product.description)
-      setValue("unity", product.unity || "UN")
+      setValue("description", product.Designacao)
+      setValue("unity", product.Unidade || "UN")
       setValue("quantity", 1)
-      setValue("price", Math.rounded(product.price))
-      setValue("vatTotal", Math.rounded(product.price * 0.17))
-      setValue("total", Math.rounded((product.price * 0.17 + product.price)))
+      setValue("price", Math.rounded( Number(product.preco)))
+      setValue("total", Math.rounded((Number(product.preco * product.COEFICIENTE))))
+      setValue("vatTotal", Math.rounded( Number(product.COEFICIENTE)))
     }
   }
 
@@ -277,11 +279,11 @@ export default function Documents({
 
     const quantity = e.target.value;
     const price = Number(getValues("price"));
-    const vatTotal = Number(Math.rounded(price * quantity * 0.17));
-    const total = (price * Number(quantity)) + vatTotal;
+    const vatTotal = Number( product.COEFICIENTE);
+    const total = (price * Number(quantity) * vatTotal)
 
     setValue("vatTotal", vatTotal);
-    setValue("total", Math.rounded(total))
+    setValue("total", total);
   }
 
   const handlerLinePriceChange = async (e, setValue, getValues) => {
@@ -289,8 +291,8 @@ export default function Documents({
 
     const price = Number(e.target.value);
     const quantity = Number(getValues("quantity"));
-    const vatTotal = Number(Math.rounded(price * 0.17));
-    const total = (price * Number(quantity)) + vatTotal
+    const vatTotal = Number( product.COEFICIENTE);
+    const total = (price * Number(quantity) * vatTotal)
 
     setValue("vatTotal", vatTotal);
     setValue("total", total);
@@ -316,7 +318,12 @@ export default function Documents({
       label: 'ItemUnity',
       name: 'unity',
       type: 'select',
-      options: [{ label: "Unidade", value: "UN" }]
+      options: [
+        { label: "Unidade", value: "UN" },
+        { label: "CHI", value: "CHI" },
+        { label: "H", value: "H" },
+        { label: "CHP", value: "CHP" },
+    ]
     },
     {
       label: 'Quantity',
@@ -335,7 +342,7 @@ export default function Documents({
       onChange: handlerLinePriceChange
     },
     {
-      label: 'Vat',
+      label: 'Coificiente',
       error: { required: 'Please enter the name' },
       name: 'vatTotal',
       type: 'number',
@@ -475,7 +482,6 @@ export const getServerSideProps = async (ctx) => {
 
   return {
     props: {
-   
       customerOptions,
       productOptions
     },

@@ -9,6 +9,7 @@ const get_Customers = async (filter) => {
     const url = publicRuntimeConfig.SERVER_URI + "api/base/customers";
 
     return clis;
+
     let res = [];
 
     await fetch(url, {

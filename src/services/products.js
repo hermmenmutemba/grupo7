@@ -1,5 +1,5 @@
 import getConfig from "next/config";
-import prods from "../data/ccusto2.json"
+import prods from "../data/ccusto3.json"
 // Only holds serverRuntimeConfig and publicRuntimeConfig
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
