@@ -70,7 +70,7 @@ const Index = ({ order, peddingItems = [] }) => {
           accessor: "id",
         },
         {
-          Header: "Quantity",
+          Header: "Qnt.",
           accessor: "quantity",
         },
         {
@@ -117,7 +117,7 @@ const Index = ({ order, peddingItems = [] }) => {
           accessor: "id",
         },
         {
-          Header: "Quantity",
+          Header: "Qnt.",
           accessor: "quantity",
         },
         {

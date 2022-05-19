@@ -29,20 +29,7 @@ const Dropdown = () => {
   }
 
   return (
-    <div className="hidden lg:flex relative">
-      <button
-        ref={buttonRef}
-        onClick={handleDropdownClick}
-        className="flex items-center justify-center h-16 w-12">
-        <span className={`text-base flag-icon flag-icon-us`}></span>
-      </button>
-      <div ref={dropdownRef} 
-          className={`dropdown absolute top-0 right-0 mt-16 ${hidden ? '' : 'open'}`}>
-          <div className="dropdown-content w-64 bottom-start">
-            <Countries />
-          </div>
-        </div>
-    </div>
+    <></>
   )
 }
 
