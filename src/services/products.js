@@ -1,5 +1,5 @@
 import getConfig from "next/config";
-
+import prods from "../data/ccusto2.json"
 // Only holds serverRuntimeConfig and publicRuntimeConfig
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
@@ -9,6 +9,7 @@ const get_Products = async (filter) => {
 
     let res = [];
 
+    return prods;
     await fetch(url, {
       method: "GET",
       headers: {
@@ -46,8 +47,8 @@ const get_Products_Options = async (type) => {
 
   items = items.map((item) => {
     return {
-      value: item.code,
-      label: item.description,
+      value: item.id,
+      label: item.DESCRICAO,
       ...item,
     };
   });

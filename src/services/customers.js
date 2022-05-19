@@ -1,4 +1,5 @@
 import getConfig from "next/config";
+import clis from "../data/cliente.json"
 
 // Only holds serverRuntimeConfig and publicRuntimeConfig
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
@@ -7,6 +8,7 @@ const get_Customers = async (filter) => {
   try {
     const url = publicRuntimeConfig.SERVER_URI + "api/base/customers";
 
+    return clis;
     let res = [];
 
     await fetch(url, {

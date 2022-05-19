@@ -27,9 +27,7 @@ const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export default function Documents({
   customerOptions,
-  typeOptions,
-  productOptions,
-  projectOptions
+  productOptions
 }) {
 
   const router = useRouter(); //vai buscar o router
@@ -221,14 +219,6 @@ export default function Documents({
       onChange: handlerDate
     },
     {
-      label: 'Type',
-      error: { required: 'Please enter your type' },
-      name: 'type',
-      type: 'select',
-      options: typeOptions,
-      onChange: handlerType
-    },
-    {
       label: 'Serie',
       error: { required: 'Please enter your type - Now only 2021' },
       name: 'serie',
@@ -252,23 +242,8 @@ export default function Documents({
       placeholder: 'Enter the name',
       onChange: handlerName
     },
-    {
-      label: 'Discount Total',
-      name: 'discountTotal',
-      type: 'number',
-      placeholder: 'Enter the discount',
-      onChange: handlerDiscount
-    },
-    {
-      label: 'Status',
-      name: 'status',
-      type: 'select',
-      options: [
-        { value: 'open', label: 'Open' },
-        { value: 'toAproval', label: 'To Approval' }
-      ],
-      onChange: handlerStatus
-    }
+    
+   
   ]
 
   const onSubmitAddLines = async (data) => {
@@ -382,12 +357,6 @@ export default function Documents({
       type: 'number',
       placeholder: 'Enter the vat Total',
       readOnly: true
-    },
-    {
-      label: 'Project',
-      name: 'projectId',
-      type: 'select',
-      options: projectOptions
     }
   ]
 
@@ -516,20 +485,15 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const typeOptions = await typedocService.get_TypeDocs_Options('COT')
-
   const customerOptions = await customerService.get_Customers_Options()
-
-  const projectOptions = await projectService.get_Projects_Options()
 
   const productOptions = await productService.get_Products_Options();
 
   return {
     props: {
-      typeOptions,
+   
       customerOptions,
-      productOptions,
-      projectOptions
+      productOptions
     },
   };
 };

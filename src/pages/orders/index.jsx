@@ -115,6 +115,13 @@ export default function Orders({
   );
 }
 export const getServerSideProps = async (ctx) => {
+
+  return {
+    props: {
+      allOrders :[]
+    },
+  };
+  
   const { "attendance.token": token } = parseCookies(ctx);
 
   if (!token) {
@@ -131,7 +138,7 @@ export const getServerSideProps = async (ctx) => {
 
   return {
     props: {
-      allOrders
+      allOrders :[]
     },
   };
 };

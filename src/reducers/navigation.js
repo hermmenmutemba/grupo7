@@ -65,17 +65,7 @@ const initialState = [
             url: "/orders",
             title: "Order's",
             items: [],
-          },
-          {
-            url: "/gr",
-            title: "GR's",
-            items: [],
-          },
-          {
-            url: "/invoice",
-            title: "Invoice",
-            items: [],
-          },
+          }
         ],
       },
       {
@@ -96,22 +86,7 @@ const initialState = [
             url: "/customers",
             title: "Customer's",
             items: [],
-          },
-          {
-            url: "/projects",
-            title: "Project's",
-            items: [],
-          },
-          {
-            url: "/companies",
-            title: "Companies",
-            items: [],
-          },
-          {
-            url: "/typedoc",
-            title: "Type Document",
-            items: [],
-          },
+          }
         ],
       },
     ],

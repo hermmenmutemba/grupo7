@@ -28,11 +28,15 @@ export default function Schools({
       () => [
         {
           Header: "Id",
-          accessor: "code"
+          accessor: "id"
         },
         {
-          Header: "Description",
-          accessor: "description"
+          Header: "DESCRICAO",
+          accessor: "DESCRICAO"
+        },
+        {
+          Header: "Designacao",
+          accessor: "Designacao"
         },
         {
           Header: "Price",

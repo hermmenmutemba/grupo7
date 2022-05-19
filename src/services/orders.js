@@ -9,6 +9,8 @@ const get_Orders = async (filter) => {
 
     let res = [];
 
+    return res;
+
     await fetch(url, {
       method: "GET",
       headers: {
